@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', function(){
+    $users = \App\User::all();
+    foreach ($users as $user);
+    echo '<pre>';
+    echo $users->name;
+    echo '<pre>';
+});
