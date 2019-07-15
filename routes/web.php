@@ -17,8 +17,9 @@ Route::get('/', function () {
 
 Route::get('/', function(){
     $users = \App\User::all();
-    foreach ($users as $user);
+    $chunks = $users->chunk(5);
+    $data = $chunks->toArray();
     echo '<pre>';
-    echo $users->name;
+    print_r($data);
     echo '<pre>';
 });
